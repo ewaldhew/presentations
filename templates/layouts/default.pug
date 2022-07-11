@@ -1,0 +1,29 @@
+html 
+  head
+    block title
+
+    link(
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/css/reveal.css"
+    )
+    link(
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/css/theme/white.css"
+    )
+
+    //- Theme used for syntax highlighting of code
+    link(
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/zenburn.min.css"
+    )
+
+  body
+    div(class="reveal")
+      div(class="slides")
+        block slides
+
+    //- Load reveal.js    
+    script(src="https://cdn.jsdelivr.net/npm/headjs@1.0.3/dist/1.0.0/head.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/js/reveal.min.js")
+    script
+      include loadrevealjs.js
