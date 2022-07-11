@@ -1,0 +1,35 @@
+name: Build and deploy to gh-pages
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+
+    - name: Setup
+      if: github.event_name == 'push'
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "ewaldhew@users.noreply.github.com"
+        git worktree add build gh-pages
+
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+    - name: Build
+      run: |
+        npm ci
+        npm run build
+
+    - name: Deploy
+      if: github.event_name == 'push'
+      run: |
+        cd build
+        git commit -am "Build $(date +%y%m%d%H%M%S)"
+        git push
