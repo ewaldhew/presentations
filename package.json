@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "serve": "npx serve",
+    "build": "pug templates/presentations --out build"
+  },
+  "dependencies": {
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "pug-cli": "^1.0.0-alpha6"
+  }
+}
