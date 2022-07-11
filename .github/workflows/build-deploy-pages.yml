@@ -31,5 +31,6 @@ jobs:
       if: github.event_name == 'push'
       run: |
         cd build
-        git commit -am "Build $(date +%y%m%d%H%M%S)"
+        git add .
+        git commit -m "Build $(date +%y%m%d%H%M%S)"
         git push
