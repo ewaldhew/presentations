@@ -4,7 +4,8 @@
     "build": "pug templates/presentations --out build"
   },
   "dependencies": {
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "reveal.js-internation": "^1.0.4"
   },
   "devDependencies": {
     "pug-cli": "^1.0.0-alpha6"

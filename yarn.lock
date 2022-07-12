@@ -598,6 +598,11 @@ resolve@^1.1.6, resolve@^1.15.1:
     path-parse "^1.0.7"
     supports-preserve-symlinks-flag "^1.0.0"
 
+reveal.js-internation@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/reveal.js-internation/-/reveal.js-internation-1.0.4.tgz#176d9d2bd6ac76c918b25581e65239607a7de657"
+  integrity sha512-DolaZ1iobnjQxBG8oxOD9C8DyKw4AOfV/gy87BtPp22sGQDVbg2JV2OPOiBFNI4AQLTxl8TrMaDkxMz9BgDWFg==
+
 right-align@^0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/right-align/-/right-align-0.1.3.tgz#61339b722fe6a3515689210d24e14c96148613ef"
