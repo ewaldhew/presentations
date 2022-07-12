@@ -1,5 +1,42 @@
-extends ../layouts/default.pug
+extends /templates/layouts/slides.pug
 
-block slides
-  section
-    h1 Title Text
+block title
+  title Raytracing 101
+
+block revealConfig
+  script.
+    Reveal.configure({
+      width: 1280,
+      height: 720,
+      center: false,
+    })
+
+block internationConfig
+  +internation({
+    locale: "en",
+    langattribute: "data-i18n",
+    switchselector: ".langchooser",
+    html: true,
+    languages: {
+      jp: {
+        dictionary: "/assets/202207-raytracing/i18n/internation-jp.json"
+      }
+    },
+  })
+
+block content
+  .theme-font-montserrat.theme-color-white-blue(style="width: 100%; height: 100%;")
+    .reveal
+      .menubar#menubar
+        .dropdown
+          input#checkbox_toggle(type="checkbox")
+          label(for="checkbox_toggle" data-i18n="chooselanguage") 🌐
+          .langchooser
+            label
+              input(type="radio" name="menulangradios" value="en")
+              span EN
+            label
+              input(type="radio" name="menulangradios" value="jp")
+              span JP
+      .slides(style="border: 1px solid grey;")
+        include 202207-raytracing.slides.html

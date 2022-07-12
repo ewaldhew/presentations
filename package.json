@@ -1,7 +1,9 @@
 {
   "scripts": {
     "serve": "npx serve",
-    "build": "pug templates/presentations --out build"
+    "build": "pug templates/presentations --out build --basedir .",
+    "copyAssets": "rsync -a --delete assets/ build/assets/",
+    "package": "npm run build && npm run copyAssets"
   },
   "dependencies": {
     "pug": "^3.0.2",
