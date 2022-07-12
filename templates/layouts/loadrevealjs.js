@@ -65,15 +65,7 @@ Reveal.initialize({
   // The display mode that will be used to show slides
   display: 'block',
 
-  dependencies: [
-    { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/markdown/marked.js' },
-    { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/markdown/markdown.js' },
-    { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/notes/notes.js', async: true },
-    { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3.7.0/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
-  ],
-  markdown: {
-    smartypants: true
-  }
+  plugins: [ RevealHighlight ],
 });
 Reveal.configure({
   // PDF Configurations
