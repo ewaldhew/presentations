@@ -4,3 +4,48 @@ extends default.pug
 block theme
   style
     include slides.css
+
+block revealJs
+  script.
+    var SLConfig = {"deck":{"width":1280,"height":720,"margin":0.05,"visibility":"all","background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"white-blue","auto_slide_interval":0,"comments_enabled":false,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":false,"should_loop":false,"share_notes":false,"slide_number":false,"slide_count":21,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":1659667645329,"font_typekit":null,"font_google":null,"time_limit":null,"navigation_mode":"default","upsizing_enabled":true,"notes":{}}};
+
+  include ../layouts/slides.js.html
+
+  script.
+    Reveal.initialize({
+      width: SLConfig.deck.width,
+      height: SLConfig.deck.height,
+      margin: 0.05,
+
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: true,
+      mouseWheel: false,
+      showNotes: SLConfig.deck.share_notes ? 'separate-page' : false,
+      slideNumber: SLConfig.deck.slide_number,
+      fragmentInURL: true,
+
+      autoSlide: SLConfig.deck.auto_slide_interval || 0,
+      autoSlideStoppable: true,
+
+      autoAnimateMatcher: SL.deck.AutoAnimate.matcher,
+
+      rollingLinks: false,
+      center: SLConfig.deck.center || false,
+      shuffle: SLConfig.deck.shuffle || false,
+      loop: SLConfig.deck.should_loop || false,
+      rtl: SLConfig.deck.rtl || false,
+      navigationMode: SLConfig.deck.navigation_mode,
+
+      transition: SLConfig.deck.transition,
+      backgroundTransition: SLConfig.deck.background_transition,
+
+      pdfMaxPagesPerSlide: 1,
+
+      highlight: {
+        escapeHTML: false
+      },
+
+      plugins: [ RevealHighlight ]
+    });

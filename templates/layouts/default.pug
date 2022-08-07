@@ -21,13 +21,14 @@ html
         .slides
           block slides
 
-    //- Load reveal.js    
-    script(src="https://cdn.jsdelivr.net/npm/headjs@1.0.3/dist/1.0.0/head.min.js")
-    script(src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.0/dist/reveal.js")
-    script(src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.0/plugin/highlight/highlight.js")
-    script
-      include loadrevealjs.js
-    block revealConfig
+    //- Load reveal.js
+    block revealJs
+      script(src="https://cdn.jsdelivr.net/npm/headjs@1.0.3/dist/1.0.0/head.min.js")
+      script(src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.0/dist/reveal.js")
+      script(src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.0/plugin/highlight/highlight.js")
+      script
+        include loadrevealjs.js
+      block revealConfig
 
     //- i18n config
     script
