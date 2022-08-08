@@ -11,7 +11,7 @@ block internationConfig
     html: true,
     languages: {
       jp: {
-        dictionary: "/assets/202207-raytracing/i18n/internation-jp.json"
+        dictionary: `${process.env.SITE_BASE || '/'}assets/202207-raytracing/i18n/internation-jp.json`
       }
     },
   })

@@ -4,6 +4,9 @@ on:
     branches:
       - master
 
+env:
+  SITE_BASE: "/presentations/"
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
